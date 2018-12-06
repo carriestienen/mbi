@@ -1,0 +1,48 @@
+/* Admin Startup */
+
+main.startup {
+
+  .options {
+    display: grid;
+    grid-template-columns: 320px 320px;
+    grid-template-rows: 200px;
+    grid-column-gap: 3rem;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 75px;
+  }
+
+  a {
+    display: grid;
+    grid-template-rows: 4rem auto;
+    grid-row-gap: 1rem;
+    align-content: center;
+    border: 1px solid $dk-blue;
+    background: transparentize($md-blue,.5);
+    font-weight: bold;
+    font-size: 2rem;
+    transition: border $base-duration $base-timing, background $base-duration $base-timing;
+    text-transform: uppercase;
+
+    svg {
+      width: 4rem;
+      margin: auto;
+
+      * {
+        fill: $lt-blue;
+        transition: fill $base-duration $base-timing;
+      }
+    }
+
+    &:hover {
+      border-width: 5px;
+      background: transparentize($blue,.5);
+
+      svg {
+        * {
+          fill: $white;
+        }
+      }
+    }
+  }
+}

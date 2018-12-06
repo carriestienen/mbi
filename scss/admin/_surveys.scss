@@ -1,0 +1,13 @@
+/* Surveys */
+
+main.surveys {
+  align-content: start;
+
+  .survey-grid {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 75px;
+  }
+
+}

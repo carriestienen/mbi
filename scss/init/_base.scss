@@ -1,0 +1,59 @@
+/* Base Styles */
+
+// Everything
+* {
+  box-sizing: border-box;
+}
+
+// REM
+body,
+html {
+  font-size: $rem;
+  line-height: 1;
+  text-align: center;
+}
+
+// Body
+body {
+  font-family: 'Khand', 'Oswald', sans-serif;
+  color: $white;
+  text-align: center;
+}
+
+// Images
+img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+}
+
+// Main
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+// Link
+a {
+  color: $white;
+  text-decoration: none;
+}
+
+// Placeholders
+::-webkit-input-placeholder {
+  color: mix($black, $lt-blue);
+  font-size: 1rem;
+}
+::-moz-placeholder {
+  color: mix($black, $lt-blue);
+  font-size: 1rem;
+}
+:-ms-input-placeholder {
+  color: mix($black, $lt-blue);
+  font-size: 1rem;
+}
+:-moz-placeholder {
+  color: mix($black, $lt-blue);
+  font-size: 1rem;
+}

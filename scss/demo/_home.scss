@@ -1,0 +1,24 @@
+/* 0: Demo 'Home' Page */
+
+.home {
+  background: $dk-blue;
+
+  main {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: stretch;
+    align-content: center;
+  }
+
+  a {
+    display: grid;
+    align-content: center;
+    color: $lt-blue;
+    font-size: 2.5rem;
+
+    &:hover {
+      background: $md-blue;
+    }
+  }
+
+}

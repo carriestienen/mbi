@@ -1,0 +1,54 @@
+/* Global Admin Styles */
+
+body.edit {
+
+  .half-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0;
+    text-align: left;
+    padding-bottom: 75px;
+  }
+
+  .half-1 {
+    border-right: 1px solid $blue;
+    padding: 1rem 1rem 1rem 0;
+  }
+
+  .half-2 {
+    border-left: 1px solid $blue;
+    padding: 1rem 0 1rem 1rem;
+  }
+
+  .question,
+  .game-name {
+    margin-bottom: 25px;
+
+    input {
+      font-weight: 500;
+    }
+  }
+
+  label {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    letter-spacing: .5px;
+    color: $blue;
+    cursor: pointer;
+    transition: color $base-duration $base-timing;
+
+    &:hover {
+      color: mix($blue, $md-blue);
+    }
+  }
+
+  .controls {
+    margin-top: 25px;
+
+    button {
+      vertical-align: middle;
+    }
+  }
+}

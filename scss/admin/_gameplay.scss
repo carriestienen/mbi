@@ -1,0 +1,129 @@
+/* Admin Gameplay */
+
+body.admin {
+  main.gameplay {
+    padding-top: 50px;
+  }
+}
+
+main.gameplay {
+  grid-template-rows: auto 250px;
+
+  #admin-game-board {
+    position: relative;
+    min-height: 400px;
+
+    &.team-1 {
+      #team-1 {
+        border-color: $orange;
+        color: $md-blue;
+      }
+    }
+    &.team-2 {
+      #team-2 {
+        border-color: $orange;
+        color: $md-blue;
+      }
+    }
+  }
+
+  #sub-total,
+  #total,
+  #team-1,
+  #team-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 10px;
+    width: 150px;
+    height: 100px;
+    margin: auto;
+    display: grid;
+    align-content: center;
+    border: 1rem solid $blue;
+    border-radius: 1rem;
+    background: $white;
+  }
+
+  #sub-total,
+  #total {
+    font-size: 56px;
+    font-weight: 900;
+  }
+
+  #sub-total {
+    bottom: unset;
+  }
+  #total {
+    top: unset;
+  }
+
+  #team-1,
+  #team-2 {
+    font-size: 42px;
+    font-weight: 700;
+  }
+
+  #team-1 {
+    right: unset;
+  }
+  #team-2 {
+    left: unset;
+  }
+
+  .answers {
+    position: absolute;
+    top: 125px;
+    left: 195px;
+    right: 195px;
+    bottom: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 2px solid $dk-blue;
+    background: $dk-blue;
+
+  }
+
+  .col {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .answer {
+    display: grid;
+    position: relative;
+    overflow: hidden;
+    grid-template-columns: auto 100px;
+    background: $md-blue;
+    color: $lt-blue;
+    font-size: 24px;
+    text-transform: uppercase;
+    border: 2px solid $dk-blue;
+    transition: border $base-duration $base-timing, background $base-duration $base-timing;
+
+    &.blank {
+      border: 0;
+      background: transparentize($md-blue,.5);
+    }
+
+    &.on {
+      border-color: $peach;
+      background: $orange;
+    }
+  }
+
+  .label,
+  .value {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .label {}
+  .value {
+    font-weight: bold;
+    background: transparentize($dk-blue,.75);
+  }
+}

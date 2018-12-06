@@ -1,0 +1,187 @@
+/* Global Admin Styles */
+
+body.admin {
+  position: relative;
+  background: $lt-blue;
+  color: $black;
+
+  h1 {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 38px;
+    font-weight: black;
+    margin: 0;
+    text-transform: uppercase;
+
+    a {
+      display: inline-block;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background: $black;
+      line-height: 34px;
+      color: $lt-blue;
+      transition: background $base-duration $base-timing, color $base-duration $base-timing;
+
+      &:hover {
+        color: $white;
+        background: $dk-blue;
+      }
+    }
+  }
+
+  main {
+    display: grid;
+    padding-top: 150px;
+    padding-left: 90px;
+    padding-right: 90px;
+
+    & > a {
+      justify-self: start;
+    }
+  }
+
+  button {
+    font-family: inherit;
+    text-transform: uppercase;
+    border: none;
+    transition: background $base-duration $base-timing;
+    cursor: pointer;
+    color: $white;
+    background: $md-blue;
+    padding: 5px 1em 3px;
+
+    &:hover {
+      background: $dk-blue;
+    }
+
+    &.play,
+    &.save {
+      font-size: 24px;
+      font-weight: 700;
+
+      &:hover {
+        background: $green;
+      }
+    }
+
+    &.edit,
+    &.copy,
+    &.cancel {
+      font-size: 20px;
+      font-weight: 600;
+      background: $blue;
+
+      &:hover {
+        background: $dk-blue;
+      }
+    }
+
+    &.delete {
+      font-size: 12px;
+      font-weight: 300;
+      background: mix($lt-blue, $blue);
+
+      &:hover{
+        background: $red;
+      }
+    }
+
+    &#add-new {
+      width: 150px;
+      height: 50px;
+      line-height: 45px;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 50px;
+      padding-top: 3px;
+      padding: 0;
+    }
+  }
+
+  input {
+    color: $black;
+    width: 100%;
+    font-family: inherit;
+    border: 2px solid mix($lt-blue, $blue);
+    background: mix($white, $lt-blue, 75%);
+    transition: border $base-duration $base-timing, background $base-duration $base-timing;
+    font-size: 20px;
+    padding: 10px 1rem 8px;
+
+    &:hover {
+      border-color: $blue;
+    }
+
+    &:focus {
+      border-color: $orange;
+      background: $white;
+    }
+
+    &[type="text"] {}
+
+    &[type="number"] {
+      text-align: center;
+      font-weight: bold;
+      padding-left: .5rem;
+      padding-right: .5rem;
+    }
+  }
+
+  .num-circle {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+
+    span {
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: $blue;
+      color: $white;
+      text-align: center;
+      line-height: 44px;
+      font-weight: 700;
+      font-size: 28px;
+    }
+  }
+
+  .survey {
+    display: grid;
+    justify-content: stretch;
+    background: $dk-blue;
+    transition: background $base-duration $base-timing;
+    align-content: stretch;
+    font-size: 18px;
+    color: $white;
+
+    &:hover {
+      background: $md-blue;
+    }
+
+    span,
+    a {
+      text-align: left;
+      padding: 12px 1rem 10px;
+    }
+  }
+
+  .half-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 0;
+    text-align: left;
+  }
+
+  .half-1 {
+    border-right: 1px solid $blue;
+    padding-right: 1rem;
+  }
+
+  .half-2 {
+    border-left: 1px solid $blue;
+    padding-left: 1rem;
+  }
+}

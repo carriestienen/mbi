@@ -1,0 +1,30 @@
+/* Mixins */
+
+// Clearfix
+@mixin clearfix {
+
+  &:before,
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+}
+
+// Blue Radial Gradient Background
+@mixin blue-radial {
+  background: $dk-blue;
+  background: -moz-radial-gradient(circle, $dk-blue 0%, $md-blue 65%, $blue 85%, $lt-blue 100%);
+  background: -webkit-radial-gradient(circle, $dk-blue 0%, $md-blue 65%, $blue 85%, $lt-blue 100%);
+  background: radial-gradient(circle, $dk-blue 0%, $md-blue 65%, $blue 85%, $lt-blue 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#{$dk-blue}",endColorstr="#{$lt-blue}",GradientType=1);
+}
+
+@mixin blue-linear($t) {
+  background: $dk-blue;
+  background: -moz-linear-gradient(0deg, transparentize($dk-blue,$t) 0%, transparentize($md-blue,$t) 100%);
+  background: -webkit-linear-gradient(0deg, transparentize($dk-blue,$t) 0%, transparentize($md-blue,$t) 100%);
+  background: linear-gradient(0deg, transparentize($dk-blue,$t) 0%, transparentize($md-blue,$t) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#{$dk-blue}",endColorstr="#{$md-blue}",GradientType=1);
+}

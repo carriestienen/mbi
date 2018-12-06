@@ -1,0 +1,84 @@
+/* Global Game Styles */
+
+body.game {
+  background-image: url('../images/game_bg.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  text-transform: uppercase;
+  position: relative;
+
+  main {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .demo-nav {
+    position: absolute;
+    top: 4rem;
+    margin: auto;
+    width: 100%;
+    z-index: 1000;
+
+    .prev,
+    .next {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 6.5rem;
+      height: 2.25rem;
+      font-size: 2rem;
+      line-height: 1.25;
+      border-radius: 1.125rem;
+      background: $white;
+      color: $blue;
+      transition: background $base-duration $base-timing, color $base-duration $base-timing;
+
+      &:hover {
+        background: $md-blue;
+        color: $white;
+      }
+    }
+
+    .prev {
+      left: 2rem;
+    }
+
+    .next {
+      right: 2rem;
+    }
+  }
+
+  #wrong {
+    display: grid;
+    grid-gap: 4%;
+    padding: 0 4%;
+    grid-template-rows: 90%;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    grid-template-columns: 1fr;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 900;
+
+    &.x-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &.x-3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    svg {
+      height: 100%;
+      width: 100%;
+      * {
+        fill: #D0021B;
+      }
+    }
+  }
+}

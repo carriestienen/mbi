@@ -1,0 +1,102 @@
+/* Edit Game */
+
+main.edit-game {
+
+  .round {
+    border-bottom: 2px solid mix($lt-blue, $blue, 75%);
+    padding: 0 1rem 1rem;
+
+    h2 {
+      margin: 1rem 0;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: $dk-blue;
+    }
+  }
+
+  .target-wrapper {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 1rem;
+  }
+
+  .num-circle {}
+
+  .survey-target {
+    border: 2px dashed $blue;
+    background: transparentize($blue, .9);
+    transition: border $base-duration $base-timing, background $base-duration $base-timing;
+
+    .survey {
+      margin-bottom: 0;
+
+      & + span {
+        display: none;
+      }
+    }
+
+    & > span {
+      display: block;
+      line-height: 40px;
+      text-align: right;
+      padding-right: 1rem;
+      font-style: italic;
+      font-weight: 300;
+      color: $blue;
+      transition: color $base-duration $base-timing;
+    }
+
+    &.ui-droppable-active {
+      border-color: $orange;
+    }
+
+    &.ui-droppable-hover,
+    &.dropped {
+      border: 2px solid $orange;
+      background: transparentize($orange, .8);
+
+      & > span {
+        color: $orange;
+      }
+    }
+  }
+
+  .survey-grid {
+    border: 2px solid $blue;
+    background: transparentize($white, .5);
+    padding: 1rem 1rem 0;
+    transition: border $base-duration $base-timing, background $base-duration $base-timing;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+
+    &.ui-droppable-active {
+      border: 2px dashed $orange;
+    }
+
+    &.ui-droppable-hover {
+      border: 2px solid $orange;
+      background: transparentize(mix($white, $orange), .5);
+    }
+  }
+
+  .survey {
+    margin-bottom: 1rem;
+    cursor: grab;
+  }
+
+  .final {
+    border-bottom: 0;
+
+    .target-wrapper {
+      grid-template-columns: 40px auto;
+      margin: 1rem 0;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

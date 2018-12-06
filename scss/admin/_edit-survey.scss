@@ -1,0 +1,24 @@
+/* Edit Survey */
+
+main.edit-survey {
+
+  .survey-answers {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-row-gap: 10px;
+  }
+
+  .survey-answer {
+    display: grid;
+    grid-template-columns: 40px auto 100px;
+    grid-column-gap: 20px;
+    padding: 0 5px 10px;
+    border-bottom: 1px solid mix($lt-blue, $blue, 75%);
+
+    &:last-of-type {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+}
