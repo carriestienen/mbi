@@ -1,0 +1,261 @@
+/* Rounds 1 & 2 Styles */
+
+// Displays
+#total,
+#sub-total,
+#team-1,
+#team-2,
+#timer {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  bottom: 30px;
+  right: 30px;
+  font-weight: 600;
+  border: 10px solid $orange;
+  border-radius: 1rem;
+  @include blue-radial;
+}
+
+// Total, Sub-Total, & Timer
+#total,
+#sub-total,
+#timer {
+  width: 350px;
+  height: 200px;
+  font-size: 8rem;
+  line-height: 195px;
+}
+#total {
+  top: unset;
+}
+#sub-total {
+  bottom: unset;
+}
+
+// Team Scores
+#team-1,
+#team-2 {
+  width: 275px;
+  height: 175px;
+  font-size: 6rem;
+  line-height: 165px;
+  transition: border $base-duration $base-timing, box-shadow $base-duration $base-timing;
+}
+#team-1 {
+  right: unset;
+}
+#team-2 {
+  left: unset;
+}
+
+// Game Board
+#gameboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 1180px;
+  height: 510px;
+  border: 10px solid $peach;
+  padding: 5px;
+  border-radius: 1rem;
+  background: $dk-blue;
+
+  // Show Blanks
+  &.show-blanks {
+    .back {
+      transform: rotateX(0deg);
+      top: 0;
+    }
+  }
+
+  // Column
+  .col {
+    width: 50%;
+    float: left;
+  }
+
+  // Answer
+  .answer {
+    position: relative;
+    height: 120px;
+    width: 100%;
+    overflow: hidden;
+
+    // Active & Alt-Active
+    &.active,
+    &.alt-active {
+      .back {
+        transform: rotateX(-90deg);
+        top: -50%;
+      }
+      .front {
+        transform: rotateX(0deg);
+        top: 0%;
+      }
+    }
+
+    // Alternative Active State
+    &.alt-active {
+      .front {
+        background: $peach;
+        border-color: $dk-blue;
+        .value {
+          background: $orange;
+        }
+      }
+    }
+
+  } // answer
+
+  // Back & Front
+  .back,
+  .front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    transform: rotateX(90deg);
+    top: 50%;
+    transition: transform $base-duration $base-timing, top $base-duration $base-timing;
+    @include blue-linear(.25);
+  }
+
+  // Back
+  .back {
+    display: grid;
+    align-content: center;
+    border: 3px solid $md-blue;
+
+    span {
+      display: block;
+      height: 75px;
+      width: 75px;
+      border-radius: 50%;
+      font-size: 3.5rem;
+      font-weight: 300;
+      line-height: 80px;
+      background: transparentize($lt-blue,.75);
+    }
+  }
+
+  // Front
+  .front {
+    border: 5px solid $orange;
+    line-height: 115px;
+
+    .text,
+    .value {
+      height: 100%;
+      float: left;
+    }
+
+    .text {
+      width: 455px;
+      font-size: 3.2rem;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    .value {
+      width: 110px;
+      font-size: 5rem;
+      font-weight: 700;
+      background: transparentize($dk-blue,.5);
+    }
+  }
+
+} // game board
+
+// Wrong Answers
+.wrong {
+  position: absolute;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  // X
+  svg {
+    width: 25%;
+    height: auto;
+    display: inline-block;
+    margin: 9% 2rem;
+    * {
+      fill: $lt-red;
+    }
+  }
+
+  &.active {
+    animation: wrong-spring (6 * $base-duration) $base-timing 1;
+  }
+
+} // wrong answers
+
+// The Oval
+#oval {
+  position: absolute;
+  top: 75px;
+  left: 150px;
+  bottom: 75px;
+  right: 150px;
+  border: 20px solid $orange;
+  border-radius: 50%;
+  z-index: -1;
+  overflow: hidden;
+  transition: background $base-duration $base-timing, border $base-duration $base-timing;
+  @include blue-linear(.25);
+
+  // Active Team Gradients
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    transition: opacity $base-duration $base-timing;
+  }
+  &:before {
+    @include active-team-linear(.25, -90deg);
+  }
+  &:after {
+    @include active-team-linear(.25, 90deg);
+  }
+}
+
+// Team 1 Active
+.team-1 {
+
+  #team-1 {
+    border-color: $lt-blue;
+    box-shadow: 0 0 5rem $peach;
+  }
+
+  #oval {
+    &:before {
+      opacity: 1;
+    }
+  }
+
+} // team 1 active
+
+// Team 2 Active
+.team-2 {
+
+  #team-2 {
+    border-color: $lt-blue;
+    box-shadow: 0 0 5rem $peach;
+  }
+
+  #oval {
+    &:after {
+      opacity: 1;
+    }
+  }
+
+} // team 2 active

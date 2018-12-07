@@ -2,17 +2,30 @@
 $title = 'Round 2 Board';
 $custom_class = 'game';
 
-$data = array(
+$id = $_GET['id'];
+
+$file_lines = file('../game_data/surveys.csv');
+$current_game_data = explode(",",$file_lines[$id]);
+
+$current_game_name = $current_game_data[0];
+
+$data = [];
+for ($i = 1; $i < count($current_game_data); $i+=2) {
+  $temp = array($current_game_data[$i], $current_game_data[$i+1]);
+  array_push($data, $temp);
+}
+
+/* $data = array(
   array('Poop', 40),
   array('Everything', 24),
   array('Farts', 18),
   array('New Jersey', 12),
   array('The Trash', 4),
   array('Donald Trump', 2),
-);
+); */
 
 include '../include/functions.php';
-include '../include/header.php';
+include '../include/header.php'; 
 ?>
 
 <main class="board">

@@ -1,0 +1,354 @@
+/* Regular Rounds Admin Control Styles */
+
+// Admin Round Controls
+#round-controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 305px;
+  display: grid;
+  padding: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  background: transparentize($blue,.9);
+
+  // Column
+  .col {
+    display: grid;
+    width: 100%;
+    height: 100%;
+  }
+
+  // Col 1
+  .col-1 {
+    background: transparentize($blue,.85);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    padding: 20px;
+  }
+
+  // Col 2
+  .col-2 {
+    background: transparentize($blue,.8);
+    grid-template-rows: 40px 105px;
+    align-content: center;
+    grid-gap: 2.5rem;
+    padding: 2rem 40px 20px;
+  }
+
+  // Col 3
+  .col-3 {
+    background: transparentize($blue,.75);
+    grid-template-rows: 87px auto;
+    grid-gap: 0;
+    padding: 0;
+  }
+
+} // admin round controls
+
+// Startup Switches
+.startup-switch {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto 40px;
+  grid-gap: 1rem;
+
+  // Button
+  button {
+    text-align: left;
+    font-size: 1.5rem;
+    padding: .25rem 1rem 0;
+    font-weight: 500;
+
+    // Disabled
+    &:disabled {
+      font-weight: 300;
+      background: $lt-blue;
+      cursor: default;
+
+      // Indicator
+      & + .light {
+        background: $lt-blue;
+      }
+
+    } // disabled
+
+  } // button
+
+  // Indicator
+  .light {
+    height: 40px;
+    width: 100%;
+    border-radius: 50%;
+    background: $blue;
+    transition: background $base-duration $base-timing;
+  }
+
+  // Active
+  &.active {
+
+    // Button
+    button,
+    button:disabled {
+      background: $green;
+      cursor: default;
+      font-weight: 400;
+
+      // Indicator
+      & + .light {
+        background: $lt-green;
+      }
+
+    } // button
+
+  } // active
+
+} // startup switches
+
+// Team Toggle
+#team-toggle {
+  transition: opacity $base-duration $base-timing;
+
+  // Disabled
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: .75;
+  }
+
+  .label {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $dk-blue;
+    cursor: pointer;
+    transition: color $base-duration $base-timing;
+    &:hover {
+      color: mix($dk-blue,$md-blue);
+    }
+  }
+}
+#the-toggle {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  border: 1px solid $blue;
+  height: 24px;
+  border-radius: 12px;
+  margin: 0 1.5rem;
+  background: transparentize($white,.5);
+  transition: border $base-duration $base-timing, background $base-duration $base-timing;
+
+  // Center Hover
+  &.hover {
+    background: transparentize($white,.25);
+  }
+}
+// Circle
+#the-toggle-knob {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: $white;
+  border: 1px solid $peach;
+  top: -9px;
+  left: 40px;
+  z-index: 2;
+  transition: left $base-duration $base-timing, background $base-duration $base-timing;
+}
+#toggle-center {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: -10px;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+// Wrong Buttons
+#wrong-buttons {
+  display: grid;
+  grid-template-columns: 5fr 6fr 7fr 7fr;
+  grid-gap: 1rem;
+  margin: 0;
+
+  // Wrong
+  .wrong {
+    font-weight: 500;
+    font-size: 3rem;
+    background: transparentize($red,.5);
+
+    // Hover
+    &:hover {
+      background: $red;
+    }
+
+    // Active
+    &.active {
+      font-weight: 700;
+      background: $lt-red;
+    }
+
+    // Disabled
+    &:disabled {
+      cursor: default;
+      background: $lt-blue;
+    }
+
+  } // wrong
+
+  // Buttons
+  button {
+    margin: 0;
+    padding: 0;
+  }
+
+} // wrong buttons
+
+// Clear Wrongs
+#wrong-clear {
+  font-size: 2rem;
+  font-weight: 500;
+
+  // Disabled
+  &:disabled {
+    cursor: default;
+    background: $lt-blue;
+  }
+}
+
+// Sound Effects
+#sfx {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 2px solid $dk-blue;
+
+  // Button
+  button {
+    height: 100%;
+    color: $lt-blue;
+    border: 1px solid $dk-blue;
+    font-size: 1.25rem;
+
+    // Hover & Active
+    &:hover,
+    &.active {
+      color: $white;
+
+      // Icon
+      svg {
+        * {
+          fill: $white;
+        }
+      }
+    } // hover
+
+    // Active
+    &.active {
+      background: $orange;
+      cursor: default;
+    }
+
+  } // button
+
+  // Icons
+  svg {
+    height: 30px;
+    margin-bottom: 5px;
+
+    * {
+      fill: $lt-blue;
+      transition: fill $base-duration $base-timing;
+    }
+  } // icons
+
+} // sound effects
+
+// Endgame
+#endgame {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  padding: 2rem;
+  transition: background 4*$base-duration $base-timing;
+
+  // Hover
+  &:hover {
+    background: transparentize($peach,.4);
+  }
+
+  // Buttons
+  button {
+    font-weight: 500;
+    font-size: 2rem;
+    background: $dk-blue;
+
+    // Hover
+    &:hover {
+      background: $orange;
+    }
+
+    &:disabled {
+      font-weight: 300;
+      cursor: default;
+      background: $lt-blue;
+    }
+
+    &.active {
+      font-weight: 400;
+      cursor: default;
+      background: $green;
+    }
+  } // buttons
+
+} // endgame
+
+// Active Team
+.team-1,
+.team-2 {
+  #the-toggle {
+    border-color: $md-blue;
+  }
+  #the-toggle-knob {
+    background: $peach;
+    border-color: $orange;
+  }
+}
+
+// Team 1 Active
+.team-1 {
+  #toggle-team-1 {
+    color: $md-blue;
+  }
+  #the-toggle-knob {
+    left: 0;
+  }
+}
+
+// Team 2 Active
+.team-2 {
+  #toggle-team-2 {
+    color: $md-blue;
+  }
+  #the-toggle-knob {
+    left: 78px;
+  }
+}
+
+// End Round
+.end-round {
+
+  // Team Toggle
+  #team-toggle {
+    cursor: default;
+    pointer-events: none;
+  }
+
+} // end round

@@ -1,0 +1,246 @@
+/* Regular Rounds Admin Gameboard Styles */
+
+// Score Boards
+#sub-total,
+#team-1,
+#team-2 {
+  position: absolute;
+  background: $white;
+  border: 10px solid $blue;
+  border-radius: 1rem;
+  font-weight: 700;
+  line-height: 115px;
+}
+
+// Sub-Total
+#sub-total {
+  width: 200px;
+  height: 125px;
+  top: 45px;
+  left: 0;
+  right: 0;
+  bottom: unset;
+  font-size: 6rem;
+}
+
+// Team Scores
+#team-1,
+#team-2 {
+  top: 320px;
+  width: 175px;
+  height: 125px;
+  font-size: 5rem;
+}
+#team-1 {
+  left: 50px;
+}
+#team-2 {
+  right: 50px;
+}
+
+// Game Board
+#gameboard {
+  position: absolute;
+  top: 205px;
+  left: 0;
+  right: 0;
+  width: 900px;
+  height: 340px;
+  border: 2px solid $dk-blue;
+  background: mix($md-blue,$dk-blue);
+
+  .col {
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+
+} // game board
+
+// Answers
+.answer {
+  position: relative;
+  width: 100%;
+  height: 25%;
+  display: grid;
+  overflow: hidden;
+  border: 2px solid $dk-blue;
+  grid-template-columns: auto 100px;
+  background: $md-blue;
+  transition: border $base-duration $base-timing, background $base-duration $base-timing;
+
+  // Content
+  .text,
+  .value {
+    margin: 0;
+    color: $white;
+    font-size: 2rem;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+  }
+
+  // Text
+  .text {
+    text-transform: uppercase;
+  }
+
+  // Value
+  .value {
+    background: transparentize($dk-blue,.75);
+  }
+
+  // Hover
+  &:hover {
+
+    // Visibility Toggle
+    .visibility-toggle {
+      top: 0;
+    }
+
+  } // hover
+
+  // Active & Alt Active
+  &.active,
+  &.alt-active {
+
+    // Visibility Toggle
+    .visibility-toggle {
+
+      // Hide
+      .hide {
+        svg {
+          * {
+            fill: $lt-blue;
+          }
+        }
+      } // hide
+
+      // Show
+      .show {
+        svg {
+          * {
+            fill: $dk-blue;
+          }
+        }
+      } // show
+
+      // Toggle Itself
+      .toggle {
+        border-color: $blue;
+
+        // Circle
+        &:after {
+          background: $orange;
+          left: 22px;
+        }
+      } // toggle itself
+
+    } // visibility toggle
+
+  } // active & alt active
+
+  // Active
+  &.active {
+    border-color: $peach;
+    background: $orange;
+  }
+
+  // Alt Active State
+  &.alt-active {
+    background: $dk-blue;
+    border-color: $lt-blue;
+  }
+
+} // answers
+
+// Visibility Toggle
+.visibility-toggle {
+  position: absolute;
+  top: -2rem;
+  left: 5px;
+  width: 100px;
+  background: $white;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 5px 2px;
+  cursor: pointer;
+  transition: top $base-duration $base-timing;
+
+  // Icons
+  .hide,
+  .show {
+    display: inline-block;
+    width: 20px;
+
+    svg {
+      * {
+        transition: top $base-duration $base-timing;
+      }
+    }
+  } // icons
+
+  // Hide
+  .hide {
+    svg {
+      * {
+        fill: $dk-blue;
+      }
+    }
+  } // hide
+
+  // Show
+  .show {
+    svg {
+      * {
+        fill: $lt-blue;
+      }
+    }
+  } // show
+
+  // Toggle Itself
+  .toggle {
+    display: inline-block;
+    position: relative;
+    top: -3px;
+    width: 40px;
+    height: 10px;
+    border-radius: 5px;
+    background: $white;
+    border: 1px solid $lt-blue;
+    transition: border $base-duration $base-timing, background $base-duration $base-timing;
+
+    // Circle
+    &:after {
+      content: '';
+      display: block;
+      height: 14px;
+      width: 14px;
+      border-radius: 50%;
+      background: $white;
+      border: 1px solid $peach;
+      position: absolute;
+      top: -4px;
+      left: 0px;
+      transition: background $base-duration $base-timing, left $base-duration $base-timing;
+    }
+  } // toggle itself
+
+} // visibility toggle
+
+// Team 1 Active
+.team-1 {
+  #team-1 {
+    border-color: $orange;
+    box-shadow: 0 0 3rem $peach;
+    color: $dk-blue;
+  }
+}
+
+// Team 2 Active
+.team-2 {
+  #team-2 {
+    border-color: $orange;
+    box-shadow: 0 0 3rem $peach;
+    color: $dk-blue;
+  }
+}

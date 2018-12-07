@@ -1,0 +1,1 @@
+jQuery(document).ready(function(a){if(a("main").hasClass("final")){a("body"),a("#timer"),a("#total"),a("#sfx-wrong"),a("#sfx-correct")}});

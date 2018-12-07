@@ -1,0 +1,99 @@
+/* Final Round Styles */
+
+// Final Round
+.final {
+
+  #sub-total {
+    display: grid;
+    grid-template-columns: 85%;
+    justify-content: center;
+    align-content: center;
+    @include blue-linear(0);
+  }
+
+  // Gameboard
+  #gameboard {
+    height: 555px;
+    background: mix($md-blue,$dk-blue,25%);
+  }
+
+} // final round
+
+// Answers
+.player-answer {
+  width: 100%;
+  height: 105px;
+  border: 2px solid $dk-blue;
+  @include blue-linear(.5);
+  padding: 5px;
+}
+
+// Answer Content
+.player-text,
+.player-value {
+  border: 2px solid $dk-blue;
+  height: 91px;
+  transition: border $base-duration $base-timing, background $base-duration $base-timing;
+  font-size: 3rem;
+  line-height: 92px;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: transform $base-duration $base-timing;
+    transform: scale(0);
+    
+  }
+
+  // Active
+  &.active {
+    border-color: $orange;
+    background: transparentize($dk-blue, .5);
+
+    span {
+      transform: scale(1);
+    }
+  }
+} // answer content
+
+// Text
+.player-text {
+  width: 465px;
+  margin-right: 5px;
+  float: left;
+  text-align: left;
+
+  span {
+    padding-left: 1.5rem;
+    text-transform: uppercase;
+  }
+}
+
+// Value
+.player-value {
+  width: 91px;
+  float: left;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+// Timer
+#timer {
+  display: none;
+  top: unset;
+  z-index: 2;
+  font-family: $timer-font;
+  font-size: 10rem;
+  font-weight: normal;
+  line-height: 180px;
+  box-shadow: 0 0 2rem $peach;
+  background: none;
+  @include blue-linear(.5);
+
+  &.active {
+    display: block;
+  }
+}

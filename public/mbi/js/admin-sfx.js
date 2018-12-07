@@ -1,0 +1,1 @@
+jQuery(document).ready(function(t){t("#sfx").find("button").each(function(e,n){var i=t(n).next();t(n).click(function(){t(n).addClass("active"),i.trigger("play"),setTimeout(function(){t(n).removeClass("active")},1e3*i[0].duration+50)})})});

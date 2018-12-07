@@ -1,0 +1,10 @@
+/* ChunkFive */
+
+// Regular
+@font-face {
+  font-family: $logo-font;
+  src: url('../fonts/chunkfive.woff2') format('woff2'),
+       url('../fonts/chunkfive.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}

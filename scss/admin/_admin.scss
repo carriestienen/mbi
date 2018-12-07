@@ -1,187 +1,107 @@
-/* Global Admin Styles */
+/* Base Admin Styles */
 
-body.admin {
-  position: relative;
+// Body
+body {
   background: $lt-blue;
   color: $black;
+}
 
-  h1 {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    font-size: 38px;
-    font-weight: black;
-    margin: 0;
-    text-transform: uppercase;
+// Page Title
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+  margin: 2.25rem 3rem 1.75rem;
+  text-align: left;
+  text-transform: uppercase;
 
-    a {
-      display: inline-block;
-      height: 30px;
-      width: 30px;
-      border-radius: 50%;
-      background: $black;
-      line-height: 34px;
-      color: $lt-blue;
-      transition: background $base-duration $base-timing, color $base-duration $base-timing;
+  .dd {
+    font-family: $logo-font;
+  }
+}
 
-      &:hover {
-        color: $white;
-        background: $dk-blue;
-      }
+// Buttons
+button {
+  font-family: $font;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: $white;
+  border: none;
+  background: transparentize($md-blue,.25);
+  transition: background $base-duration $base-timing, color $base-duration $base-timing, border $base-duration $base-timing;
+
+  // Hover
+  &:hover {
+    background: $dk-blue;
+  }
+
+  // Positive Buttons
+  &.positive {
+    &:hover {
+      background: $green;
     }
   }
 
-  main {
-    display: grid;
-    padding-top: 150px;
-    padding-left: 90px;
-    padding-right: 90px;
-
-    & > a {
-      justify-self: start;
-    }
-  }
-
-  button {
-    font-family: inherit;
-    text-transform: uppercase;
-    border: none;
-    transition: background $base-duration $base-timing;
-    cursor: pointer;
-    color: $white;
-    background: $md-blue;
-    padding: 5px 1em 3px;
-
+  // Neutral Buttons
+  &.neutral {
+    background: $blue;
     &:hover {
       background: $dk-blue;
     }
-
-    &.play,
-    &.save {
-      font-size: 24px;
-      font-weight: 700;
-
-      &:hover {
-        background: $green;
-      }
-    }
-
-    &.edit,
-    &.copy,
-    &.cancel {
-      font-size: 20px;
-      font-weight: 600;
-      background: $blue;
-
-      &:hover {
-        background: $dk-blue;
-      }
-    }
-
-    &.delete {
-      font-size: 12px;
-      font-weight: 300;
-      background: mix($lt-blue, $blue);
-
-      &:hover{
-        background: $red;
-      }
-    }
-
-    &#add-new {
-      width: 150px;
-      height: 50px;
-      line-height: 45px;
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 50px;
-      padding-top: 3px;
-      padding: 0;
-    }
   }
 
-  input {
-    color: $black;
-    width: 100%;
-    font-family: inherit;
-    border: 2px solid mix($lt-blue, $blue);
-    background: mix($white, $lt-blue, 75%);
-    transition: border $base-duration $base-timing, background $base-duration $base-timing;
-    font-size: 20px;
-    padding: 10px 1rem 8px;
-
+  // Negative Buttons
+  &.negative {
+    background: $lt-blue;
     &:hover {
-      border-color: $blue;
-    }
-
-    &:focus {
-      border-color: $orange;
-      background: $white;
-    }
-
-    &[type="text"] {}
-
-    &[type="number"] {
-      text-align: center;
-      font-weight: bold;
-      padding-left: .5rem;
-      padding-right: .5rem;
+      background: $red;
     }
   }
 
-  .num-circle {
-    display: grid;
-    align-content: center;
-    justify-content: center;
+} // buttons
 
-    span {
-      display: block;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: $blue;
-      color: $white;
-      text-align: center;
-      line-height: 44px;
-      font-weight: 700;
-      font-size: 28px;
-    }
+input {
+  color: $black;
+  width: 100%;
+  font-family: $font;
+  border: 2px solid mix($lt-blue, $blue);
+  background: mix($white, $lt-blue, 75%);
+  transition: border $base-duration $base-timing, background $base-duration $base-timing;
+  font-size: 24px;
+  padding: 10px 1rem 8px;
+
+  &:hover {
+    border-color: $blue;
   }
 
-  .survey {
-    display: grid;
-    justify-content: stretch;
-    background: $dk-blue;
-    transition: background $base-duration $base-timing;
-    align-content: stretch;
-    font-size: 18px;
-    color: $white;
-
-    &:hover {
-      background: $md-blue;
-    }
-
-    span,
-    a {
-      text-align: left;
-      padding: 12px 1rem 10px;
-    }
+  &:focus {
+    border-color: $orange;
+    background: $white;
   }
 
-  .half-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 0;
-    text-align: left;
-  }
+  &[type="text"] {}
 
-  .half-1 {
-    border-right: 1px solid $blue;
-    padding-right: 1rem;
+  &[type="number"] {
+    text-align: center;
+    font-weight: bold;
+    padding-left: .5rem;
+    padding-right: .5rem;
   }
+}
 
-  .half-2 {
-    border-left: 1px solid $blue;
-    padding-left: 1rem;
-  }
+// Form Placeholders
+::-webkit-input-placeholder {
+  color: mix($black, $lt-blue);
+  font-size: 1rem;
+}
+::-moz-placeholder {
+  color: mix($black, $lt-blue);
+  font-size: 1rem;
+}
+:-ms-input-placeholder {
+  color: mix($black, $lt-blue);
+  font-size: 1rem;
+}
+:-moz-placeholder {
+  color: mix($black, $lt-blue);
+  font-size: 1rem;
 }

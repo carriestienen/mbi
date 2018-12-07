@@ -1,0 +1,32 @@
+/* Animations */
+
+// Wrong "X" Spring Motion
+@keyframes wrong-spring {
+  0% {
+    opacity: 1;
+    transform: scale(.75);
+  }
+  12.5% {
+    transform: scale(1.1);
+  }
+  25% {
+    transform: scale(.85);
+  }
+  37.5% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(.95);
+  }
+  62.5% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  99% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

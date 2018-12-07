@@ -1,0 +1,24 @@
+/* Admin Home Styles */
+
+// Home
+.home {
+  position: absolute;
+  top: 7rem;
+  left: 3rem;
+  bottom: 7rem;
+  right: 3rem;
+  display: grid;
+  grid-template-columns: 27rem 27rem;
+  grid-template-rows: 150px 150px;
+  grid-gap: 4rem 5rem;
+  justify-content: center;
+  align-content: center;
+
+  // Buttons
+  button {
+    font-size: 2.25rem;
+    font-weight: 500;
+    padding: 0;
+    line-height: 1;
+  }
+}

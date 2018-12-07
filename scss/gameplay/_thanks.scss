@@ -1,0 +1,21 @@
+/* Thank You Splash Styles */
+
+.thanks {
+  @include blue-linear(.5);
+}
+
+// Congrats Text
+#thanks-congrats {
+  font-size: 12rem;
+  text-transform: uppercase;
+  padding: 10% 0 6%;
+
+  strong {
+    color: $lt-blue;
+  }
+}
+
+// Thanks Text
+#thanks-thanks {
+  width: 65%
+}
